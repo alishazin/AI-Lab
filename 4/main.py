@@ -65,7 +65,7 @@ if include_d == '1':
 if include_p == '1': 
     accepted_parts.append(s_p)
 
-part_length = size * ((100/len(accepted_parts)) / 100)
+part_length = (size * (100/len(accepted_parts))) / 100
 
 for i in range(len(accepted_parts)):
 
@@ -74,11 +74,7 @@ for i in range(len(accepted_parts)):
 
 if len(generated_password) < size:
 
-    char_set = s_lc
-    if include_p:
-        char_set = s_p
-    elif include_d:
-        char_set = s_d
+    char_set = accepted_parts[-1]
 
     random.shuffle(char_set)
 
