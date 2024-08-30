@@ -4,37 +4,56 @@ class TravellingSalesmanProblem:
     def __init__(self, matrix):
         self.M = matrix
         self.all = set(range(0, len(matrix)))
-        # 1st row is implicitly considered as the starting point
+        # 1st row is considered as the starting node
 
     def solve(self):
-        path = []
-        return [path, self.g(path, 0, self.all - set([0]))]
+        return self.g(0, self.all - set([0]))
 
-    def g(self, path, i, S):
+    def g(self, i, S):
 
         if len(S) == 0:
             tempValue = self.M[i][0]
-            path.append([i+1, tempValue])
-            return tempValue
+            path = [i+1, 1]
+            return [path, tempValue]
         
-        minK = None
+        minIndex = None
         minValue = None
+        count = 0
+        paths = []
+        
         for k in S:
-            tempValue = self.M[i][k] + self.g(path, k, S - set([k]))
+            
+            path, tempValue = self.g(k, S - set([k]))
+            tempValue += self.M[i][k] 
+            
+            paths.append(path)
+            
             if minValue == None or minValue > tempValue:
                 minValue = tempValue
-                minK = k
+                minIndex = count
+            count += 1
         
-        path.append([minK+1, minValue])
+        path = paths[minIndex]
+        path.insert(0,i+1)
         
-        return minValue
+        return [path, minValue]
 
 tsp = TravellingSalesmanProblem([
-    [0 , 10, 15, 20],
-    [5 , 0 , 9 , 10],
-    [6 , 13, 0 , 12],
-    [8 , 8 , 9 , 0 ],
+    [0 , 10, 15, 20], 
+    [10, 0 , 25, 25], 
+    [15, 25, 0 , 30],
+    [20, 25, 30, 0 ]
 ])
 
-print(tsp.solve())
+# tsp = TravellingSalesmanProblem([
+#     [0 , 10, 15, 20],
+#     [5 , 0 , 9 , 10],
+#     [6 , 13, 0 , 12],
+#     [8 , 8 , 9 , 0 ],
+# ])
+
+path, cost = tsp.solve()
+
+print("Cost: ", cost)
+print("Path: ", path)
  
