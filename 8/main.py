@@ -1,9 +1,14 @@
 # Solve TSP using Dynamic Programing
+
 # Formula: g(i, S) = min { 
 #       ( 
 #           C[i][k] + g(k, S - {k}) 
 #       ) for all k ε S 
 # }
+
+# where C = Adjacency Matrix
+#       S = Set of all unvisited neighbours
+#       i = initially, starting node
 
 class TravellingSalesmanProblem:
 
