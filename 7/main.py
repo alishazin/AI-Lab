@@ -60,7 +60,7 @@ class NQueenProblem:
         return False
 
 
-obj = NQueenProblem(4)
+obj = NQueenProblem(int(input("Enter N value: ")))
 
 if obj.solve():
     obj.printBoard()
