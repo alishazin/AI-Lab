@@ -1,5 +1,9 @@
 # Solve TSP using Dynamic Programing
-
+# Formula: g(i, S) = min { 
+#       ( 
+#           C[i][k] + g(k, S - {k}) 
+#       ) for all k ε S 
+# }
 
 class TravellingSalesmanProblem:
 
