@@ -49,8 +49,15 @@ class TravellingSalesmanProblem:
         
         return [path, minValue]
 
+# tsp = TravellingSalesmanProblem([
+#     [0 , 10, 15, 20], 
+#     [10, 0 , 25, 25], 
+#     [15, 25, 0 , 30],
+#     [20, 25, 30, 0 ]
+# ])
+
 tsp = TravellingSalesmanProblem([
-    [0 , 10, 15, 20], 
+    [0 , 15, 5, 20], 
     [10, 0 , 25, 25], 
     [15, 25, 0 , 30],
     [20, 25, 30, 0 ]
@@ -66,5 +73,6 @@ tsp = TravellingSalesmanProblem([
 path, cost = tsp.solve()
 
 print("Cost: ", cost)
-print("Path: ", path)
- 
+
+print("Path: ", *(f"{i} -> " for i in path[0:-1]), end="")
+print(path[-1]) 
