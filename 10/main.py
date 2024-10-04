@@ -1,7 +1,7 @@
 
-# evaluation function
-def f(source, dest):
-    pass
+# f(x) = g(x) + h(x)
+# g(x) = actual cost
+# h(x) = heuristic value
 
 # Function to get the index of the node with least f(x) from open_list
 def getIndexForLowestFX(open_list):
@@ -9,36 +9,36 @@ def getIndexForLowestFX(open_list):
     minValue = float('inf')
     minIndex = None
 
-    for i in range(open_list):
+    for i in range(len(open_list)):
         if open_list[i][1] < minValue:
             minValue = open_list[i][1]
             minIndex = i
 
     return minIndex
 
-
+# A* search
 def aStarSearch(graph, heuristics, source, target):
 
-    # node, f(x), sum of actual_cost
-    open_list = [[source, 0, 0]]
-    closed_list = [source]
+    # node, f(x), sum of g(x), path
+    open_list = [[source, 0, 0, []]]
+    closed_list = []
 
     while open_list:
 
-        temp_node, temp_fx, act_cost_sum = open_list.pop(getIndexForLowestFX(open_list))
+        temp_node, temp_fx, act_cost_sum, temp_path = open_list.pop(getIndexForLowestFX(open_list))
 
         if temp_node == target:
-            return [temp_node, temp_fx, act_cost_sum]
+            return {'cost': act_cost_sum, 'path': [*temp_path, temp_node]}
         
-        # exclude if from closed_list
+        if temp_node in closed_list: continue
 
         for node, act_cost in graph[temp_node]:
-
-            open_list.append([node, act_cost_sum + act_cost + heuristics[node], act_cost_sum + act_cost])
+            
+            open_list.append([node, act_cost_sum + act_cost + heuristics[node], act_cost_sum + act_cost, [*temp_path, temp_node]])
 
         closed_list.append(temp_node)
 
-    return []
+    return None
 
 
 graph = {
@@ -70,3 +70,15 @@ heuristics = {
     'J': 5,
     'K': 3
 }
+
+result = aStarSearch(graph, heuristics, 'S', 'G')
+
+if result:
+    print("Cost:", result['cost'])
+    
+    print("Path: ", end="")
+    for i in result['path'][0:-1]:
+        print(i, " -> ", end="")
+    print(result['path'][-1])
+else:
+    print("Couldn't find a path.")
