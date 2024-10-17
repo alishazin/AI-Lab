@@ -33,6 +33,8 @@ class TravellingSalesmanProblem:
         paths = []
         
         for k in S:
+
+            if self.M[i][k] == None: continue
             
             path, tempValue = self.g(k, S - set([k]))
             tempValue += self.M[i][k] 
@@ -44,6 +46,10 @@ class TravellingSalesmanProblem:
                 minIndex = count
             count += 1
         
+        if minIndex == None:
+            print("The given graph is a disconnected graph")
+            return [-1], -1
+
         path = paths[minIndex]
         path.insert(0,i+1)
         
