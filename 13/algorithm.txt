@@ -1,0 +1,25 @@
+
+Initialize SH = [None,None,None,..]
+Initialize GH = None
+
+For each 'concepts' c and target 't':
+    
+    if 't' is positive:
+        Generalize SH
+
+    if 't' is negative:
+        Leave SH as it is
+
+        If 'GH' is None:
+            do the initial step to fill 'GH'
+        
+        Else:
+            For each 'GH' tempGH
+                If 'tempGH' is valid with 'c':
+                    do nothing
+                Else:
+                    specialize it and add to 'GH' 
+
+    For each 'concept' tempC upto c:
+        For each 'GH' tempGH
+            check if its valid, else remove

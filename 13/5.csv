@@ -1,0 +1,5 @@
+Shape,Size,Color,Surface,Thickness,Target
+Circular,Large,Light,Smooth,Thick,Malignant (+)
+Circular,Large,Light,Irregular,Thick,Malignant (+)
+Oval,Large,Dark,Smooth,Thin,Benign (-)
+Oval,Large,Light,Irregular,Thick,Malignant (+)
