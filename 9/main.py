@@ -30,10 +30,16 @@ def print_result(result):
     for k in result:
         print(f"{k} : {result[k]}")
 
-h_result = train("data.csv", "Poisonous", ["Example"], "Yes")
+
+h_result = train("1.csv", "EnjoySport", [], "Yes")
 print_result(h_result)
             
 print()
+
+# h_result = train("data.csv", "Poisonous", ["Example"], "Yes")
+# print_result(h_result)
             
-h_result = train("data2.csv", "Goes", [], "Yes")
-print_result(h_result)
+# print()
+            
+# h_result = train("data2.csv", "Goes", [], "Yes")
+# print_result(h_result)
