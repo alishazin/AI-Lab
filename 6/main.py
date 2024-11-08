@@ -3,7 +3,7 @@ import time
 actions = {
     0: "Fill A", 
     1: "Fill B", 
-    2: "Empty B", 
+    2: "Empty A", 
     3: "Empty B", 
     4: "Pour from B to A", 
     5: "Pour from A to B", 

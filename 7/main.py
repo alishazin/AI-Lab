@@ -25,19 +25,47 @@ class NQueenProblem:
                 return False
 
         # Check Diagonal (Top Left to Bottom Right)
-        for i, j in zip(
-                range(row - min(row, col), row + (self.N - max(row, col))), 
-                range(col - min(row, col), col + (self.N - max(row, col)))
-            ):
-            if self.board[i][j] == 1: return False
+        # for i, j in zip(
+        #         range(row - min(row, col), row + (self.N - max(row, col))), 
+        #         range(col - min(row, col), col + (self.N - max(row, col)))
+        #     ):
+        #     if self.board[i][j] == 1: return False
 
-        # Check Diagonal (Bottom Left to Top Right)
-        for i, j in zip(
-                range(row + min(self.N - 1 - row, col), row - min(self.N - 1 - col, row) - 1, -1),
-                range(col - min(self.N - 1 - row, col), col + min(self.N - 1 - col, row) + 1)
-            ):
-            if self.board[i][j] == 1: return False
+        # # Check Diagonal (Bottom Left to Top Right)
+        # for i, j in zip(
+        #         range(row + min(self.N - 1 - row, col), row - min(self.N - 1 - col, row) - 1, -1),
+        #         range(col - min(self.N - 1 - row, col), col + min(self.N - 1 - col, row) + 1)
+        #     ):
+        #     if self.board[i][j] == 1: return False
 
+        i = 0
+        
+        while True:
+
+            valid_count = 0
+
+            if (row - i) >= 0 and (col - i) >= 0:
+                valid_count += 1
+                if self.board[row - i][col - i] == 1: return False
+
+            if (row + i) < self.N and (col - i) >= 0:
+                valid_count += 1
+                if self.board[row + i][col - i] == 1: return False
+
+            if (row - i) >= 0 and (col + i) < self.N:
+                valid_count += 1
+                if self.board[row - i][col + i] == 1: return False
+
+            if (row + i) < self.N and (col + i) < self.N:
+                valid_count += 1
+                if self.board[row + i][col + i] == 1: return False
+
+            if valid_count == 0:
+                break
+            
+            valid_count = 0
+            i += 1
+ 
         return True
 
 

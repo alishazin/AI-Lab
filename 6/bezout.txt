@@ -1,7 +1,7 @@
 we can apply Bézout's identity to find if measuring a certain amount of water 
 using jugs with given capacities is possible. 
 
-Specifically, if the most common divisor of the jug capacities divides the 
+Specifically, if the greatest common divisor of the jug capacities divides the 
 desired amount of water, then it is possible to measure that amount using the jugs.
 
 if (target % gcd(jug1_cap, jug2_cap) == 0):
