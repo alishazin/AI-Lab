@@ -1,12 +1,10 @@
 
 import pandas as pd
-from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
 
 class MultinomialNaiveBayesClassifier:
 
     def __init__(self):
-        
+
         self.is_trained = False
         self.feature_columns = None
         self.target_values = None
