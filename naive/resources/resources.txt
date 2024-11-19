@@ -19,6 +19,6 @@ While logging, we have to change * to + in the entire formula
 
 So the equation goes from 'formula-with-pdf.jpeg' to 'formula-with-log.jpeg'
 
-Also, if for any feature, teh variance happens to be zero, we will replace it with 
+Also, if for any feature, the variance happens to be zero, we will replace it with 
 a small positive value so that log(variance) doesnt end up being undefined (error).
 This is done by the 'var_smoothing' parameter
