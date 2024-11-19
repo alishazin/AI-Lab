@@ -2,6 +2,7 @@
 from sklearn.naive_bayes import GaussianNB
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import load_iris
+import pandas as pd
 iris = load_iris()
 
 X = iris.data
@@ -21,8 +22,8 @@ gnb.fit(X_train,y_train)
 
 y_pred=gnb.predict(X_test)
 
-pred_species = [iris.target_names[p] for p in y_pred] 
-print("Predictions:", pred_species)
+# pred_species = [iris.target_names[p] for p in y_pred] 
+# print("Predictions:", pred_species)
 
 # confusion metric
 from sklearn.metrics import confusion_matrix 
@@ -34,4 +35,4 @@ from sklearn.metrics import accuracy_score
 ac = accuracy_score(y_test, y_pred)
 print(ac)
 
-print(iris.target_names)
+# print(iris.target_names)

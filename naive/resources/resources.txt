@@ -1,0 +1,20 @@
+English
+
+Multinomia Naive Bayes: https://www.youtube.com/watch?v=O2L2Uv9pdDA
+Gaussian Naive Bayes: https://www.youtube.com/watch?v=H3EjCKtlVog
+
+Desi
+
+Multinomia Naive Bayes: https://www.youtube.com/watch?v=XzSlEA4ck2I
+Gaussian Naive Bayes: https://www.youtube.com/watch?v=kufuBE6TJew
+Alpha Value / Laplace Smoothing: https://www.youtube.com/watch?v=8aEkpRNysHE
+
+
+Gaussian NB:
+
+Here instead of using the normal pdf (prob distribution func), we 
+will use the log based pdf because of the underflow error.
+
+While logging, we have to change * to + in the entire formula
+
+So the equation goes from 'formula-with-pdf.jpeg' to 'formula-with-log.jpeg'

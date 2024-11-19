@@ -1,9 +1,0 @@
-English
-
-Multinomia Naive Bayes: https://www.youtube.com/watch?v=O2L2Uv9pdDA
-Gaussian Naive Bayes: https://www.youtube.com/watch?v=H3EjCKtlVog
-
-Desi
-
-Multinomia Naive Bayes: https://www.youtube.com/watch?v=XzSlEA4ck2I
-Gaussian Naive Bayes: https://www.youtube.com/watch?v=kufuBE6TJew
