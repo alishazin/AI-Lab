@@ -1,0 +1,13 @@
+
+Slight different way (but can be useful later):
+https://www.youtube.com/watch?v=9YA2t78Ha68&list=PLBv09BD7ez_7beI0_fuE96lSbsr_8K8YD&index=4
+
+Theory behind GMM (method used in the code):
+https://www.youtube.com/watch?v=ZBLyXgjBx3Q
+
+Quick co-variance recap:
+https://www.youtube.com/watch?v=qtaqvPAeEJY
+https://www.youtube.com/watch?v=152tSYtiQbw
+
+Multivariate Gaussian Distribution:
+https://www.youtube.com/watch?v=eho8xH3E6mE
