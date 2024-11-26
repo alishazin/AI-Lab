@@ -99,9 +99,9 @@ class GaussianMixtureModel:
 
     def m_step(self, X):
 
-        self.prev_priors = self.priors
-        self.prev_means = self.means
-        self.prev_vars = self.vars
+        self.prev_priors = self.priors.copy()
+        self.prev_means = self.means.copy()
+        self.prev_vars = self.vars.copy()
 
         for k in range(self.n_components):    
 
