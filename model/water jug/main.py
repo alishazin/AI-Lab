@@ -3,7 +3,7 @@ import math
 
 def solve_water_jug(c1, c2, target):
 
-    if (target % math.gcd(c1, c2) != 0) or (target > c1 and target > c2):
+    if (target % math.gcd(c1, c2) != 0) or ((target > c1 and target > c2)):
         print("Not possible according to Bézout's identity.")
         return -1
 
