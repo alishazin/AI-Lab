@@ -241,21 +241,19 @@ class GaussianMixtureModel:
 
 
 
-# np.random.seed(4)
+np.random.seed(100)
 
 n_samples = 300
 x1 = np.random.randn(n_samples, 2) + np.array([5])
 x2 = np.random.randn(n_samples, 2) + np.array([10])
-# x3 = np.random.randn(n_samples, 2) + np.array([15])
 
 X = np.vstack((x1, x2))
 np.random.shuffle(X)
 
 n_components = 2
 
-gmm = GaussianMixtureModel(n_components=n_components, log_steps=False, log_initial_step=True, fixed_priors=True)
+gmm = GaussianMixtureModel(n_components=n_components, log_steps=True, log_initial_step=True, fixed_priors=True)
 gmm.fit(X)
-labels = gmm.predict(X)
 
+labels = gmm.predict(X)
 gmm.plot(X, labels)
-print(gmm.iter_count)
